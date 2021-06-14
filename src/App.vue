@@ -5,12 +5,14 @@
     <div id="main-card">
       <div class="input_todos_bloc">
         <button>⬇</button>
-        <input type="text" placeholder="What need to be done ?">
+        <form action="" @keydown.enter="addTask">
+          <input type="text" v-model="task" placeholder="What need to be done ?">
+        </form>
       </div>
       
       <router-view></router-view>
 
-      <div id="state_bloc">
+      <div id="state_bloc" v-if="store_getAllTaks.length > 0">
         <ul>
           <li>
             <router-link :to="{ name: 'all' }">All</router-link>
@@ -32,11 +34,38 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    // H,elloWorld
+  },
+
+  data(){
+    return{
+      task: ''
+    }
+  },
+
+  computed:{
+    ...mapGetters({
+        store_getAllTaks: 'allTasks'
+    })
+  },
+
+  methods:{
+    addTask(){
+
+      this.task = { taskName: this.task, completed: false }
+
+      this.$store.commit('ADD_TASK', this.task)
+
+      console.log(this.task)
+
+      this.task = ''
+
+    }
   }
 }
 </script>

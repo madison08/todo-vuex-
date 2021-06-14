@@ -8,7 +8,16 @@ export default new Vuex.Store({
     tasks: [],
     name: 'nom'
   },
+
+  getters: {
+    // get all taks
+    allTasks: state => state.tasks,
+  },
+
   mutations: {
+    ADD_TASK(state, task){
+      state.tasks.push(task)
+    }
   },
   actions: {
   },
