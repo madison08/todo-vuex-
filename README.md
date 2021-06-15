@@ -1,7 +1,9 @@
-# todo-vuex-
+# todo-vuex
 
 ## just another todo app with vuex 😎
 # vuex_todo
+
+- <a href="https://sharp-colden-40982b.netlify.app/#/"> Project link </a>
 
 ## Project setup
 ```
