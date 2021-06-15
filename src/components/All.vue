@@ -5,7 +5,7 @@
             <div class="round">
             <input type="checkbox" v-model="task.completed" id="checkbox" />
             </div>
-            <label for="" :class="{ textTrans: task.completed }">{{ task.title }} -- {{ task.completed }} -- {{ task.id }} -- {{ completedCheck }}</label>
+            <label for="" :class="{ textTrans: task.completed }">{{ task.title }}</label>
             <div class="deleteTask" @click="deleteTask(task)">Delete</div>
         </div>
 

@@ -27,6 +27,9 @@
       </div>
     </div>
 
+
+    <p>made with 💟</p>
+
     
 
   </div>
@@ -172,6 +175,7 @@ input:focus{
   justify-content: space-around;
   border-top: 1px solid #e2e2e2;
   padding-top: 12px;
+  margin-top: 0px;
 }
 #state_bloc ul li{
   list-style-type: none;
