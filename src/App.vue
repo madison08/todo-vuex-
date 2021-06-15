@@ -195,6 +195,11 @@ li a:visited{
   line-height: 25px;
 }
 
+.textTrans{
+  text-decoration: line-through;
+  color: #e2e2e2;
+}
+
 @media (max-width: 768px){
 
   #main-card{

@@ -12,6 +12,10 @@ export default new Vuex.Store({
   getters: {
     // get all taks
     allTasks: state => state.tasks,
+
+    taskActive: state => state.tasks.filter( t => t.completed == false),
+
+    taskCompleted: state => state.tasks.filter( t => t.completed == true)
   },
 
   mutations: {
