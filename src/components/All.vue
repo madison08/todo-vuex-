@@ -1,11 +1,12 @@
 <template>
     <div>
 
-        <div class="label_todo_item" v-for="task in store_getAllTaks" :key="task.taskName">
+        <div class="label_todo_item" v-for="(task, key) in store_getAllTaks" :key="key">
             <div class="round">
-            <input type="checkbox" id="checkbox" />
+            <input type="checkbox" v-model="completedCheck" id="checkbox" />
             </div>
-            <label for="">{{ task.taskName }} </label>
+            <label for="">{{ task.title }} -- {{ task.completed }} -- {{ task.id }} -- {{ completedCheck }}</label>
+            <div class="deleteTask" @click="deleteTask(task)">Delete</div>
         </div>
 
     </div>
@@ -14,6 +15,18 @@
 import { mapState, mapGetters } from 'vuex'
     export default{
         name: 'All',
+
+        data(){
+            return{
+                completedCheck: ''
+            }
+        },
+
+        methods:{
+            deleteTask(task){
+                this.$store.commit('DELETE_TASK', task)
+            }
+        },
 
         computed:{
             ...mapState({

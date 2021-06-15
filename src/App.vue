@@ -57,7 +57,7 @@ export default {
   methods:{
     addTask(){
 
-      this.task = { taskName: this.task, completed: false }
+      this.task = { id: this.store_getAllTaks.length + 1 ,title: this.task, completed: false }
 
       this.$store.commit('ADD_TASK', this.task)
 
@@ -187,6 +187,13 @@ li a:visited{
   border: 1px solid #e2e2e2;
 }
 
+.deleteTask{
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 10px;
+  line-height: 25px;
+}
 
 @media (max-width: 768px){
 

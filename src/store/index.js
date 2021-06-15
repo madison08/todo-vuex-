@@ -15,8 +15,15 @@ export default new Vuex.Store({
   },
 
   mutations: {
+    // Add task
     ADD_TASK(state, task){
       state.tasks.push(task)
+    },
+
+    // Delete task
+    DELETE_TASK(state, task){
+      const index = state.tasks.indexOf(task)
+      state.tasks.splice(index, 1)
     }
   },
   actions: {
